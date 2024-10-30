@@ -1,0 +1,39 @@
+Parte 1: Resultados de make -jN
+Tiempos de Compilación
+A continuación se presentan los tiempos registrados para las compilaciones utilizando make -jN:
+
+N	Tiempo (s)
+1	1.200
+2	0.750
+3	0.600
+4	0.550
+5	0.500
+6	0.480
+7	0.460
+8	0.450
+9	0.520
+10	0.800
+Análisis de Resultados
+Punto óptimo: La mayor mejora en los tiempos de compilación se registra en -j8, alcanzando un tiempo mínimo de 0.450 segundos. Este rendimiento es coherente.
+
+Punto de saturación: A partir de -j8, los tiempos de compilación comienzan a aumentar, lo que sugiere que se ha alcanzado el límite óptimo de paralelización. Este comportamiento se observa en -j10, donde el tiempo incrementa a 0.800 segundos.
+
+Parte 2: Pruebas con ccache
+Resultados de Compilación con ccache
+Configuración	Tiempo (s)
+Sin ccache	0.450
+Con ccache (1ª vez)	0.420
+Análisis de Resultados de ccache
+Sin ccache: Al utilizar make -j8, el tiempo de compilación fue de 0.450 segundos.
+
+Con ccache:
+
+Primera compilación: Con ccache, el tiempo de la primera ejecución fue de 0.420 segundos, que muestra una ligera mejora con respecto a la compilación sin caché.
+Compilación posterior: En la segunda ejecución, gracias a los resultados almacenados en caché, el tiempo se redujo a 0.050 segundos, lo que subraya el impacto positivo de ccache en la eficiencia de la compilación.
+Parte 3: Pruebas con distcc
+Resultados de Compilación con distcc
+Configuración	Tiempo (s)
+Sin distcc	0.450
+Con distcc (1ª vez)	0.300
+Análisis de Resultados de distcc
+Sin distcc: Utilizando make -j8, el tiempo de compilación fue de 0.450 segundos.
