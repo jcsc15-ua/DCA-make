@@ -1,3 +1,7 @@
+Javier CLEMENT SERNA - 74395027D
+Repositorio GitHub con el codigo: https://github.com/jcsc15-ua/DCA-make.git
+				  https://github.com/jcsc15-ua/DCA-make
+
 Parte 1: Resultados de make -jN
 Tiempos de Compilación
 A continuación se presentan los tiempos registrados para las compilaciones utilizando make -jN:
